@@ -1,0 +1,2 @@
+class ConsDoingController < ApplicationController
+end

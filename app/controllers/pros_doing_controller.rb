@@ -1,0 +1,2 @@
+class ProsDoingController < ApplicationController
+end
