@@ -14,5 +14,19 @@
         <li><%= con.description %></li> <br>
     </ul>
     <% end %>
+    <% if opt.quad == true %>
+      Pros of Not Doing this Option
+        <ul>
+          <% opt.pros_not_doings.each do |pro| %>
+            <li><%= pro.description %></li> <br>
+        </ul>
+      <% end %>
+      Cons of Not Doing this Option
+      <ul>
+        <% opt.cons_not_doings.each do |con| %>
+          <li><%= con.description %></li>
+      </ul>
+      <% end %>
+    <% end %>
   <% end %>
 </ul>
