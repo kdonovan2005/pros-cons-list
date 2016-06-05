@@ -77,6 +77,8 @@ ActiveRecord::Schema.define(version: 20160603203134) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "provider"
+    t.string   "uid"
   end
 
 end
