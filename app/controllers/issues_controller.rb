@@ -1,5 +1,5 @@
 class IssuesController < ApplicationController
-  before_action :select_issue, only: [:show]
+  before_action :select_issue, only: [:show, :edit, :update, :destroy]
 
   def index
     @issues = Issue.open_issues
@@ -11,24 +11,30 @@ class IssuesController < ApplicationController
 
   def create
     @issue = Issue.new(issue_params)
-    if issue_params["name"].blank? || issue_params["name"].nil?
-      flash[:notice] = "Please name this Issue"
-      redirect_to :back
-    else
-      @issue.user_id = 1
-      @issue.save
-      redirect_to issues_path(@issue)
-    end
+    @issue.user_id = 1
+    @issue.save
+    redirect_to issues_path(@issue)
   end
 
   def show
     @options = @issue.options
   end
 
+  def update
+    @issue.update(issue_params)
+    @issue.save
+    redirect_to issue_path(@issue)
+  end
+
+  def destroy
+    @issue.destroy
+    redirect_to issues_path
+  end
+
   private
 
   def issue_params
-    params.require(:issue).permit(:name, :open, :private, :option)
+    params.require(:issue).permit(:name, :open, :private, :options)
   end
 
   def select_issue
