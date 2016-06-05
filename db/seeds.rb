@@ -49,7 +49,7 @@ ProsDoing.create(description: "She can pay", option_id: 12, weight: 5)
 
 #Cons_doings
 ConsDoing.create(description: "They might come raid for spare parts", option_id: 1, weight: 4)
-ConsDoing.create(description: "They might chase on principle", option_id: 2, weigth: 5)
+ConsDoing.create(description: "They might chase on principle", option_id: 2, weight: 5)
 ConsDoing.create(description: "Might break again soon", option_id: 3, weight: 5)
 ConsDoing.create(description: "Costs money", option_id: 4, weight: 5)
 ConsDoing.create(description: "Moderately inhumane", option_id: 5, weight: 5)
