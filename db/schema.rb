@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20160603203134) do
   create_table "issues", force: :cascade do |t|
     t.string   "name"
     t.integer  "user_id"
+    t.boolean  "quad"
+    t.boolean  "dual"
     t.boolean  "open",       default: true
     t.boolean  "private",    default: false
     t.datetime "created_at",                 null: false
@@ -50,8 +52,6 @@ ActiveRecord::Schema.define(version: 20160603203134) do
 
   create_table "options", force: :cascade do |t|
     t.string   "name"
-    t.boolean  "quad"
-    t.boolean  "dual"
     t.integer  "issue_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

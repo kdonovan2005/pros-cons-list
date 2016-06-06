@@ -10,7 +10,14 @@ class Issue < ApplicationRecord
 
   def self.open_issues
     open_issues = Issue.where("open = ?", true)
+  end
+
+  def self.public_issues
     public_issues = Issue.where("private = ?", false)
+  end
+
+  def options_attributes=(attributes)
+    
   end
 
 end

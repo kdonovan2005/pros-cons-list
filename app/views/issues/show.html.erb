@@ -1,6 +1,6 @@
 <h1> <%= @issue.name %> </h1> <br>
 <ul>
-  <% @options.each do |opt| %>
+  <% @issue.options.each do |opt| %>
     <li><h3><%= opt.name %></li></h3> <br>
     Pros of Doing This Option
     <ul>
@@ -14,7 +14,7 @@
         <li><%= con.description %></li> <br>
     </ul>
     <% end %>
-    <% if opt.quad == true %>
+    <% if @issue.quad == true %>
       Pros of Not Doing this Option
         <ul>
           <% opt.pros_not_doings.each do |pro| %>

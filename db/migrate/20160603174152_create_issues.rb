@@ -3,6 +3,8 @@ class CreateIssues < ActiveRecord::Migration[5.0]
     create_table :issues do |t|
       t.string :name
       t.integer :user_id
+      t.boolean :quad
+      t.boolean :dual
       t.boolean :open, default: true
       t.boolean :private, default: false
 
