@@ -13,5 +13,4 @@ class Issue < ApplicationRecord
     open_issues = Issue.where("open = ?", true)
     public_issues = Issue.where("private = ?", false)
   end
-
 end
