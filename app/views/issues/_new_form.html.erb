@@ -1,0 +1,39 @@
+<%= form_for @issue do |f| %>
+  <% if @issue.errors.any? %>
+    <div ="error_explanation">
+      <div class="alert">
+        <h4>Please correct the following errors:</h4>
+        <ul>
+          <% @issue.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+    </div>
+  <div>
+    <%= f.label :name, "Issue Name" %> <br>
+    <%= f.text_field :name %> <br> <br>
+  </div>
+  <div>
+    <%= f.fields_for @issue.options do |option| %>
+      <%= option.label :name, "Option 1" %> <br>
+      <%= option.text_field :name, value: "", placeholder: "Enter an Option" %> <br> <br>
+      <%= option.label :name, "Option 2" %> <br>
+      <%= option.text_field :name, value: "", placeholder: "2nd Option (Optional)" %> <br> <br>
+      <%= option.label :name, "Option 3" %> <br>
+      <%= option.text_field :name, value: "", placeholder: "3rd Option (Optional)" %> <br> <br>
+      <%= fields_for :quad do |quad_field| %> <br>
+        Quad view? : <%= quad_field.check_box :quad %> <br>
+      <% end %>
+      <%= fields_for :dual do |dual_field| %> <br>
+        Dual view? : <%= dual_field.check_box :dual %> <br>
+      <% end %>
+      <%= fields_for :private do |private| %> <br>
+        Make issue private? : <%= private.check_box :private %> <br>
+      <% end %>
+    <% end %>
+  </div>
+  <br>
+  <%= f.submit %>
+<% end %>
